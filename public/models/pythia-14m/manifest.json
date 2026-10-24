@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "id": "pythia-14m",
+  "displayName": "Pythia-14m",
+  "kind": "browser-inference",
+  "description": "Smallest model of the EleutherAI Pythia suite (6 layers, 4 heads). Executed in your browser by AttentionScope's own GPT-NeoX implementation, with every attention probability exposed and editable.",
+  "source": {
+    "repo": "EleutherAI/pythia-14m",
+    "revision": "cf967c0a9a04383db6f7b1108d86b2962634b4ac",
+    "url": "https://huggingface.co/EleutherAI/pythia-14m/tree/cf967c0a9a04383db6f7b1108d86b2962634b4ac",
+    "license": "Apache-2.0",
+    "citation": "Biderman et al. (2023). Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling. ICML."
+  },
+  "architecture": {
+    "family": "gpt-neox",
+    "numLayers": 6,
+    "numHeads": 4,
+    "numKeyValueHeads": 4,
+    "attentionType": "multi-head",
+    "hiddenSize": 128,
+    "headDim": 32,
+    "intermediateSize": 512,
+    "vocabSize": 50304,
+    "maxPositions": 2048,
+    "positional": "rotary",
+    "rotaryDims": 8,
+    "rotaryBase": 10000,
+    "parallelResidual": true,
+    "layerNormEps": 1e-05,
+    "activation": "gelu-erf",
+    "attentionScale": "1/sqrt(32)",
+    "tiedEmbeddings": false,
+    "qkvLayout": "per-head interleaved [q|k|v] in query_key_value (out = heads * 3 * headDim)"
+  },
+  "tokenizer": {
+    "file": "tokenizer.json",
+    "sha256": "870f4e2baa6b683221fa52004d5d6f40ab8c9d31961617304b78c910c2c3caf2",
+    "type": "byte-level-bpe",
+    "name": "GPT-NeoX-20B tokenizer",
+    "bosToken": {
+      "id": 0,
+      "text": "<|endoftext|>"
+    }
+  },
+  "weights": {
+    "file": "weights.bin",
+    "dtype": "float16",
+    "byteOrder": "little-endian",
+    "byteLength": 28135424,
+    "sha256": "ad09d426f13e7a63f0c25b7af7e336e32f9a929c533acd9df6aa19cd01bab9bf",
+    "tensors": [
+      {
+        "name": "gpt_neox.embed_in.weight",
+        "shape": [
+          50304,
+          128
+        ],
+        "byteOffset": 0,
+        "elementCount": 6438912
+      },
+      {
+        "name": "gpt_neox.layers.0.input_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 12877824,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.0.input_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 12878080,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.0.post_attention_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 12878336,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.0.post_attention_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 12878592,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.0.attention.query_key_value.weight",
+        "shape": [
+          384,
+          128
+        ],
+        "byteOffset": 12878848,
+        "elementCount": 49152
+      },
+      {
+        "name": "gpt_neox.layers.0.attention.query_key_value.bias",
+        "shape": [
+          384
+        ],
+        "byteOffset": 12977152,
+        "elementCount": 384
+      },
+      {
+        "name": "gpt_neox.layers.0.attention.dense.weight",
+        "shape": [
+          128,
+          128
+        ],
+        "byteOffset": 12977920,
+        "elementCount": 16384
+      },
+      {
+        "name": "gpt_neox.layers.0.attention.dense.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13010688,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.0.mlp.dense_h_to_4h.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "byteOffset": 13010944,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.0.mlp.dense_h_to_4h.bias",
+        "shape": [
+          512
+        ],
+        "byteOffset": 13142016,
+        "elementCount": 512
+      },
+      {
+        "name": "gpt_neox.layers.0.mlp.dense_4h_to_h.weight",
+        "shape": [
+          128,
+          512
+        ],
+        "byteOffset": 13143040,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.0.mlp.dense_4h_to_h.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13274112,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.1.input_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13274368,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.1.input_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13274624,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.1.post_attention_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13274880,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.1.post_attention_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13275136,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.1.attention.query_key_value.weight",
+        "shape": [
+          384,
+          128
+        ],
+        "byteOffset": 13275392,
+        "elementCount": 49152
+      },
+      {
+        "name": "gpt_neox.layers.1.attention.query_key_value.bias",
+        "shape": [
+          384
+        ],
+        "byteOffset": 13373696,
+        "elementCount": 384
+      },
+      {
+        "name": "gpt_neox.layers.1.attention.dense.weight",
+        "shape": [
+          128,
+          128
+        ],
+        "byteOffset": 13374464,
+        "elementCount": 16384
+      },
+      {
+        "name": "gpt_neox.layers.1.attention.dense.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13407232,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.1.mlp.dense_h_to_4h.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "byteOffset": 13407488,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.1.mlp.dense_h_to_4h.bias",
+        "shape": [
+          512
+        ],
+        "byteOffset": 13538560,
+        "elementCount": 512
+      },
+      {
+        "name": "gpt_neox.layers.1.mlp.dense_4h_to_h.weight",
+        "shape": [
+          128,
+          512
+        ],
+        "byteOffset": 13539584,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.1.mlp.dense_4h_to_h.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13670656,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.2.input_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13670912,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.2.input_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13671168,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.2.post_attention_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13671424,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.2.post_attention_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13671680,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.2.attention.query_key_value.weight",
+        "shape": [
+          384,
+          128
+        ],
+        "byteOffset": 13671936,
+        "elementCount": 49152
+      },
+      {
+        "name": "gpt_neox.layers.2.attention.query_key_value.bias",
+        "shape": [
+          384
+        ],
+        "byteOffset": 13770240,
+        "elementCount": 384
+      },
+      {
+        "name": "gpt_neox.layers.2.attention.dense.weight",
+        "shape": [
+          128,
+          128
+        ],
+        "byteOffset": 13771008,
+        "elementCount": 16384
+      },
+      {
+        "name": "gpt_neox.layers.2.attention.dense.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 13803776,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.2.mlp.dense_h_to_4h.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "byteOffset": 13804032,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.2.mlp.dense_h_to_4h.bias",
+        "shape": [
+          512
+        ],
+        "byteOffset": 13935104,
+        "elementCount": 512
+      },
+      {
+        "name": "gpt_neox.layers.2.mlp.dense_4h_to_h.weight",
+        "shape": [
+          128,
+          512
+        ],
+        "byteOffset": 13936128,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.2.mlp.dense_4h_to_h.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14067200,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.3.input_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14067456,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.3.input_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14067712,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.3.post_attention_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14067968,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.3.post_attention_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14068224,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.3.attention.query_key_value.weight",
+        "shape": [
+          384,
+          128
+        ],
+        "byteOffset": 14068480,
+        "elementCount": 49152
+      },
+      {
+        "name": "gpt_neox.layers.3.attention.query_key_value.bias",
+        "shape": [
+          384
+        ],
+        "byteOffset": 14166784,
+        "elementCount": 384
+      },
+      {
+        "name": "gpt_neox.layers.3.attention.dense.weight",
+        "shape": [
+          128,
+          128
+        ],
+        "byteOffset": 14167552,
+        "elementCount": 16384
+      },
+      {
+        "name": "gpt_neox.layers.3.attention.dense.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14200320,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.3.mlp.dense_h_to_4h.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "byteOffset": 14200576,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.3.mlp.dense_h_to_4h.bias",
+        "shape": [
+          512
+        ],
+        "byteOffset": 14331648,
+        "elementCount": 512
+      },
+      {
+        "name": "gpt_neox.layers.3.mlp.dense_4h_to_h.weight",
+        "shape": [
+          128,
+          512
+        ],
+        "byteOffset": 14332672,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.3.mlp.dense_4h_to_h.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14463744,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.4.input_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14464000,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.4.input_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14464256,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.4.post_attention_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14464512,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.4.post_attention_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14464768,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.4.attention.query_key_value.weight",
+        "shape": [
+          384,
+          128
+        ],
+        "byteOffset": 14465024,
+        "elementCount": 49152
+      },
+      {
+        "name": "gpt_neox.layers.4.attention.query_key_value.bias",
+        "shape": [
+          384
+        ],
+        "byteOffset": 14563328,
+        "elementCount": 384
+      },
+      {
+        "name": "gpt_neox.layers.4.attention.dense.weight",
+        "shape": [
+          128,
+          128
+        ],
+        "byteOffset": 14564096,
+        "elementCount": 16384
+      },
+      {
+        "name": "gpt_neox.layers.4.attention.dense.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14596864,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.4.mlp.dense_h_to_4h.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "byteOffset": 14597120,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.4.mlp.dense_h_to_4h.bias",
+        "shape": [
+          512
+        ],
+        "byteOffset": 14728192,
+        "elementCount": 512
+      },
+      {
+        "name": "gpt_neox.layers.4.mlp.dense_4h_to_h.weight",
+        "shape": [
+          128,
+          512
+        ],
+        "byteOffset": 14729216,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.4.mlp.dense_4h_to_h.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14860288,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.5.input_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14860544,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.5.input_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14860800,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.5.post_attention_layernorm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14861056,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.5.post_attention_layernorm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14861312,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.5.attention.query_key_value.weight",
+        "shape": [
+          384,
+          128
+        ],
+        "byteOffset": 14861568,
+        "elementCount": 49152
+      },
+      {
+        "name": "gpt_neox.layers.5.attention.query_key_value.bias",
+        "shape": [
+          384
+        ],
+        "byteOffset": 14959872,
+        "elementCount": 384
+      },
+      {
+        "name": "gpt_neox.layers.5.attention.dense.weight",
+        "shape": [
+          128,
+          128
+        ],
+        "byteOffset": 14960640,
+        "elementCount": 16384
+      },
+      {
+        "name": "gpt_neox.layers.5.attention.dense.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 14993408,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.layers.5.mlp.dense_h_to_4h.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "byteOffset": 14993664,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.5.mlp.dense_h_to_4h.bias",
+        "shape": [
+          512
+        ],
+        "byteOffset": 15124736,
+        "elementCount": 512
+      },
+      {
+        "name": "gpt_neox.layers.5.mlp.dense_4h_to_h.weight",
+        "shape": [
+          128,
+          512
+        ],
+        "byteOffset": 15125760,
+        "elementCount": 65536
+      },
+      {
+        "name": "gpt_neox.layers.5.mlp.dense_4h_to_h.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 15256832,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.final_layer_norm.weight",
+        "shape": [
+          128
+        ],
+        "byteOffset": 15257088,
+        "elementCount": 128
+      },
+      {
+        "name": "gpt_neox.final_layer_norm.bias",
+        "shape": [
+          128
+        ],
+        "byteOffset": 15257344,
+        "elementCount": 128
+      },
+      {
+        "name": "embed_out.weight",
+        "shape": [
+          50304,
+          128
+        ],
+        "byteOffset": 15257600,
+        "elementCount": 6438912
+      }
+    ],
+    "ignoredCheckpointEntries": []
+  },
+  "runtime": {
+    "maxSequenceLength": 64,
+    "computePrecision": "float32",
+    "deterministic": true
+  },
+  "capabilities": {
+    "attentionWeights": true,
+    "preSoftmaxScores": true,
+    "headOutputAblation": true,
+    "attentionReplacement": true,
+    "logitLens": true
+  },
+  "exportedAt": "2026-10-24T19:44:38+00:00",
+  "exportEnvironment": {
+    "python": "3.13.14",
+    "torch": "2.7.1+cu118",
+    "transformers": "5.17.0",
+    "numpy": "2.1.3",
+    "platform": "Windows-11-10.0.22631-SP0"
+  },
+  "validation": {
+    "reference": "independent NumPy float64 forward pass over the exported bytes",
+    "comparedAgainst": "transformers GPTNeoXForCausalLM in float64 with float64 rotary tables and a float64 eager softmax (see _common.load_pythia_exact_float64)",
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "prependBos": true,
+    "maxAbsLogitDiff": 4.412470389070222e-12,
+    "maxAbsAttentionDiff": 2.1481705303472154e-12,
+    "float32NumericalGap": {
+      "note": "Stock transformers eager attention computes softmax and rotary tables in float32. Pre-softmax scores in Pythia-14m reach ~180, so that rounding produces these differences from exact float64. AttentionScope computes activations in float64 in the browser.",
+      "maxAbsLogitDiff": 0.006204233966416339,
+      "maxAbsAttentionDiff": 0.0026012450599995907
+    }
+  }
+}

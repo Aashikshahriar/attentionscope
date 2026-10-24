@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AttentionScope</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // GitHub Pages serves this for unknown paths. The app uses hash routing, so
+      // forward /attentionscope/<route>?<query> to /attentionscope/#/<route>?<query>.
+      (function () {
+        var base = '/attentionscope/';
+        var path = location.pathname.indexOf(base) === 0 ? location.pathname.slice(base.length) : '';
+        location.replace(base + '#/' + path.replace(/\/+$/, '') + location.search);
+      })();
+    </script>
+  </head>
+  <body style="background: #080b12; color: #f4f7fb; font-family: system-ui; padding: 2rem">
+    Redirecting to <a style="color: #8b8cff" href="/attentionscope/">AttentionScope</a>…
+  </body>
+</html>

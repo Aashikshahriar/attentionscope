@@ -1,0 +1,197 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --elevated: #eef1f7;
+  --line: #d6dce8;
+  --line-strong: #b9c2d3;
+  --fg: #0b1220;
+  --muted: #4a5568;
+  --accent: #5254d6;
+  --accent-soft: rgba(82, 84, 214, 0.12);
+  --accent-fg: #ffffff;
+  --teal: #0b7f73;
+  --teal-soft: rgba(11, 127, 115, 0.12);
+  --warn: #9a5b00;
+  --warn-soft: rgba(196, 122, 0, 0.12);
+  --danger: #b42318;
+  --danger-soft: rgba(180, 35, 24, 0.1);
+  --focus: #5254d6;
+  --grid-bg: #e9edf5;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #080b12;
+  --panel: #111827;
+  --elevated: #1b2638;
+  --line: #243149;
+  --line-strong: #33445f;
+  --fg: #f4f7fb;
+  --muted: #a1aec2;
+  --accent: #8b8cff;
+  --accent-soft: rgba(139, 140, 255, 0.14);
+  --accent-fg: #0b0f1a;
+  --teal: #38d9c5;
+  --teal-soft: rgba(56, 217, 197, 0.12);
+  --warn: #f2b84b;
+  --warn-soft: rgba(242, 184, 75, 0.12);
+  --danger: #ff8a80;
+  --danger-soft: rgba(255, 138, 128, 0.12);
+  --focus: #a5a6ff;
+  --grid-bg: #0d1320;
+}
+
+[data-contrast='high'] {
+  --muted: var(--fg);
+  --line: var(--line-strong);
+}
+[data-theme='dark'][data-contrast='high'] {
+  --bg: #000000;
+  --panel: #05070b;
+  --elevated: #111620;
+  --line-strong: #8a96ab;
+  --accent: #b7b8ff;
+  --focus: #ffffff;
+}
+[data-theme='light'][data-contrast='high'] {
+  --bg: #ffffff;
+  --line-strong: #4a5568;
+  --accent: #3133b0;
+  --focus: #000000;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-elevated: var(--elevated);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-grid: var(--grid-bg);
+  --font-sans:
+    'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans KR', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+code,
+kbd,
+.font-mono {
+  font-variant-ligatures: none;
+  font-feature-settings:
+    'liga' 0,
+    'calt' 0;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.token-ws {
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.bidi-isolate {
+  unicode-bidi: isolate;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.hatch {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 3px,
+    color-mix(in srgb, var(--muted) 18%, transparent) 3px,
+    color-mix(in srgb, var(--muted) 18%, transparent) 4px
+  );
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.45s ease-out both;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
+
+[data-motion='reduce'] *,
+[data-motion='reduce'] *::before,
+[data-motion='reduce'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+.katex-display {
+  margin: 0.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}

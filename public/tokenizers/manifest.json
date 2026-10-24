@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-24T19:59:18+00:00",
+  "tokenizers": [
+    {
+      "id": "gpt2",
+      "name": "GPT-2 byte-level BPE",
+      "usedBy": "GPT-2 small (precomputed demos)",
+      "repo": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "license": "MIT",
+      "path": "tokenizers/gpt2/tokenizer.json",
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+      "bos": {
+        "id": 50256,
+        "text": "<|endoftext|>"
+      }
+    },
+    {
+      "id": "gpt-neox",
+      "name": "GPT-NeoX-20B byte-level BPE",
+      "usedBy": "Pythia-14m (live in-browser model)",
+      "repo": "EleutherAI/pythia-14m",
+      "revision": "cf967c0a9a04383db6f7b1108d86b2962634b4ac",
+      "license": "Apache-2.0",
+      "path": "models/pythia-14m/tokenizer.json",
+      "sha256": "870f4e2baa6b683221fa52004d5d6f40ab8c9d31961617304b78c910c2c3caf2",
+      "bos": {
+        "id": 0,
+        "text": "<|endoftext|>"
+      }
+    }
+  ]
+}

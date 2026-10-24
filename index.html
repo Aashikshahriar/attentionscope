@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AttentionScope — Inside the Mind of a Transformer</title>
+    <meta
+      name="description"
+      content="An open-source, in-browser Transformer interpretability lab: real attention tensors from GPT-2 and Pythia, a live Q/K/V calculator, head comparisons and controlled interventions."
+    />
+    <meta name="theme-color" content="#080B12" />
+    <meta property="og:title" content="AttentionScope — Inside the Mind of a Transformer" />
+    <meta
+      property="og:description"
+      content="Inspect real attention tensors, explore Q/K/V math, compare heads and run controlled head ablations — entirely in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aashikshahriar.github.io/attentionscope/" />
+    <meta property="og:image" content="https://aashikshahriar.github.io/attentionscope/og-image.png" />
+    <link rel="icon" type="image/svg+xml" href="/attentionscope/favicon.svg" />
+    <script>
+      // Apply the saved theme before first paint (no external requests, storage errors ignored).
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem('attentionscope-settings') || '{}').state || {};
+          var t = s.theme || 'dark';
+          if (t === 'system') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          document.documentElement.dataset.theme = t;
+          if (s.highContrast) document.documentElement.dataset.contrast = 'high';
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p style="font-family: system-ui; padding: 2rem">
+        AttentionScope runs entirely in your browser and needs JavaScript enabled.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-24T19:50:10+00:00",
+  "generator": "scripts/generate-demo-artifacts/generate_gpt2_demos.py",
+  "notice": "Precomputed from real forward passes of GPT-2 small. Regenerate with the script above to reproduce.",
+  "demos": [
+    {
+      "id": "induction",
+      "title": "Induction: repeated sentence",
+      "category": "In-context copying",
+      "summary": "A sentence repeated twice. On the second copy, some heads attend from each token to the token that followed its earlier occurrence.",
+      "model": "gpt2",
+      "modelDisplayName": "GPT-2 small",
+      "tokens": 19,
+      "file": "induction.json",
+      "sha256": "c5628dbf66b64bc1a4d51e5df537fd0b2f57bcddac36286722ecf7220595905e",
+      "attentionFile": "induction.attention.bin",
+      "attentionSha256": "7c0ae8b3fb3dfbc4e17129fe629694caf73bcb17750eafd1c6f98f101a61d687",
+      "bytes": 254672
+    },
+    {
+      "id": "ioi",
+      "title": "Indirect object identification",
+      "category": "Circuits",
+      "summary": "The model must predict the name that is not repeated. Compare attention from the final token to both names, and inspect the ablation table.",
+      "model": "gpt2",
+      "modelDisplayName": "GPT-2 small",
+      "tokens": 15,
+      "file": "ioi.json",
+      "sha256": "2ea4b57e68816a9375cfe5b366aa687b98203c07a79121011bc0651b090af2da",
+      "attentionFile": "ioi.attention.bin",
+      "attentionSha256": "8d4f37712ed1e5963401f78fcf034b88f2e64acf71fbd4afd0c09c783a9c025a",
+      "bytes": 173419
+    },
+    {
+      "id": "factual",
+      "title": "Factual recall: landmark location",
+      "category": "Knowledge",
+      "summary": "A factual completion. Attention to the subject tokens is visible in several heads, but attention alone does not localize where the fact is stored.",
+      "model": "gpt2",
+      "modelDisplayName": "GPT-2 small",
+      "tokens": 12,
+      "file": "factual.json",
+      "sha256": "b504a11fced064b597b3278773fb161a6dc973664e04ed3a0ef4bb473e39cf7c",
+      "attentionFile": "factual.attention.bin",
+      "attentionSha256": "b256f8369aa1d15b63fc7f36341350c7662880f4efcf889791ae406115c617a7",
+      "bytes": 125229
+    },
+    {
+      "id": "coreference",
+      "title": "Pronoun resolution",
+      "category": "Coreference",
+      "summary": "A Winograd-style sentence. Check which nouns the pronoun 'it' attends to in different heads, and whether the next-token prediction depends on them.",
+      "model": "gpt2",
+      "modelDisplayName": "GPT-2 small",
+      "tokens": 14,
+      "file": "coreference.json",
+      "sha256": "5856fdacc0d34a0529fcf54e34f50b5c71e73ab52d010a5a3047ab8d932a2caf",
+      "attentionFile": "coreference.attention.bin",
+      "attentionSha256": "a8ad205e2f172103fe84c3ef3cff134c5759639cbb75712856e657b30b358423",
+      "bytes": 156405
+    },
+    {
+      "id": "agreement",
+      "title": "Subject–verb agreement",
+      "category": "Syntax",
+      "summary": "The verb must agree with 'keys', not the closer noun 'cabinet'. Compare the probability of ' are' with ' is' after ablating heads.",
+      "model": "gpt2",
+      "modelDisplayName": "GPT-2 small",
+      "tokens": 8,
+      "file": "agreement.json",
+      "sha256": "fa20c59123e1faca5579c3800dfd6d56e3e2020d4d87664c26fb10983f558d9e",
+      "attentionFile": "agreement.attention.bin",
+      "attentionSha256": "7d233f641802c787a2c357517e78fdb16b0ef21538964d8d6ce0c7f8abf97834",
+      "bytes": 75873
+    },
+    {
+      "id": "code",
+      "title": "Code: function body",
+      "category": "Code",
+      "summary": "Python source with a newline and indentation. Inspect how whitespace is tokenized and how the final token attends to the parameter list.",
+      "model": "gpt2",
+      "modelDisplayName": "GPT-2 small",
+      "tokens": 15,
+      "file": "code.json",
+      "sha256": "ab45e8e1fec16628b92b07c7f75c7f0d66ae343605a3e9f5280562f5ab92d2aa",
+      "attentionFile": "code.attention.bin",
+      "attentionSha256": "5055e2b2121217795fcf5376e82e35acf87321bc70d2382eb3d1391654fb6e42",
+      "bytes": 172588
+    }
+  ]
+}
